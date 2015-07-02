@@ -11,11 +11,12 @@ var Queue = function(){
   someInstance.enqueue = function(value){
     length++;
     if (length > 1) {
-      for (var i = 0; i < length; i++) {
+      for (var i = length; i >= 0; i--) {
         storage[i + 1] = storage[i];
       }
     }
     storage[0] = value;
+    console.log(storage);
   };
 
   someInstance.dequeue = function(){
