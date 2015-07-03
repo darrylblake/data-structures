@@ -34,14 +34,12 @@ var LinkedList = function(){
   list.contains = function(target){
     var position = list.head;
     var result = false;
-    do{
-      if(position.next.value === target){
+    while(position){
+      if(position.value === target){
         result = true;
       }
       position = position.next;
-      console.log(position);
     }
-    while(position.next !== null);
     return result;
   };
 
