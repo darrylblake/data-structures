@@ -13,10 +13,12 @@ var Tree = function(value){
 
 var treeMethods = {};
 
+// TC: constant
 treeMethods.addChild = function(value){
 	this.children.push(Tree(value));
 };
 
+// TC: exponential
 treeMethods.contains = function(target){
 	var result = false;
 	
@@ -42,5 +44,3 @@ treeMethods.contains = function(target){
 /*
  * Complexity: What is the time complexity of the above functions?
  */
-
- // 
