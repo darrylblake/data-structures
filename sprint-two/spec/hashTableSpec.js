@@ -25,6 +25,9 @@ describe('hashTable', function() {
 
   it('should not contain values that were removed', function() {
     hashTable.insert('Steven', 'Tyler');
+    hashTable.insert('Taylor', 'Swift');
+    hashTable.insert('Darryl', 'Blake');
+    hashTable.insert('Charlie', 'Gray');
     hashTable.remove('Steven');
     expect(hashTable.retrieve('Steven')).to.equal(null);
   });

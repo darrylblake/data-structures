@@ -26,9 +26,13 @@ describe('linkedList', function() {
   it('should remove the head from the list when removeHead is called', function(){
     linkedList.addToTail(4);
     linkedList.addToTail(5);
+    linkedList.addToTail(6);
+    linkedList.addToTail(7);
+    linkedList.addToTail(8);
     expect(linkedList.head.value).to.equal(4);
     linkedList.removeHead();
     expect(linkedList.head.value).to.equal(5);
+    expect(linkedList.tail.value).to.equal(8);
   });
 
   it("should return the value of the former head when removeHead is called", function(){
@@ -49,6 +53,18 @@ describe('linkedList', function() {
     linkedList.addToTail(5);
     linkedList.removeHead();
     expect(linkedList.contains(4)).to.equal(false);
+  });
+
+  it('should not contain a value that was removed from an arbitrary position', function(){
+    linkedList.addToTail(-1);
+    linkedList.addToTail(1);
+    linkedList.addToTail(2);
+    linkedList.addToTail(3);
+    linkedList.addToTail(4);
+    var node = linkedList.addToTail(5);
+    linkedList.remove(node);
+    expect(linkedList.contains(5)).to.equal(false);
+    expect(linkedList.contains(4)).to.equal(true);
   });
 
   // add more tests here to test the functionality of linkedList
